@@ -23,7 +23,7 @@ int counter(string &input)
     return count;
 }
 
-string getInput()
+string getInput(istream& = cin)
 {
     string input;
     getline(cin, input);
