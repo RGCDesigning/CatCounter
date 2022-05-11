@@ -8,4 +8,4 @@ catcounter.o: ./src/catcounter.cpp
 	g++ -c ./src/catcounter.cpp
 
 clean:
-	rm -f *.o catcounter
+	rm -f *.o catcounter a.out
