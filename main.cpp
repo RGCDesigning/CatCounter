@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "src/catcounter.h"
 
 using namespace std;

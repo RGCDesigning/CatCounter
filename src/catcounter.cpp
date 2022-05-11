@@ -11,6 +11,8 @@ void toLower(string &input)
 
 int counter(string &input)
 {
+    //Expects input to be lowercase
+
     if (input.empty())
     {
         return -1;
@@ -19,7 +21,7 @@ int counter(string &input)
     int count = 0;
     size_t nPos = input.find("cat", 0);
 
-    while (nPos != string::npos)
+    while (nPos != string::npos) //Runs until it reaches end of string
     {
         count++;
         nPos = input.find("cat", nPos + 1);
@@ -35,11 +37,8 @@ string getInput(istream& in = cin)
 
     if (input.empty())
     {
-        cout << "Returning empty!" << endl;
         return "";
     }
-
-    cout << input << endl;
 
     return input;
 }
@@ -56,7 +55,8 @@ string readFile(string fileName)
         if (input.fail())
         {
             cout << "Error reading file!" << endl;
-            exit(-1);
+            input.close();
+            return "";
         }
 
         if (input.is_open())
@@ -72,7 +72,8 @@ string readFile(string fileName)
     catch (const ifstream::failure& e)
     {
         cout << "Error reading file!" << endl;
-        exit(-1);
+        input.close();
+        return "";
     }
 
     input.close();
