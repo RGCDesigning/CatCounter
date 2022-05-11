@@ -11,6 +11,11 @@ void toLower(string &input)
 
 int counter(string &input)
 {
+    if (input.empty())
+    {
+        return -1;
+    }
+
     int count = 0;
     size_t nPos = input.find("cat", 0);
 
@@ -23,15 +28,18 @@ int counter(string &input)
     return count;
 }
 
-string getInput(istream& = cin)
+string getInput(istream& in = cin)
 {
     string input;
-    getline(cin, input);
+    getline(in, input);
 
     if (input.empty())
     {
+        cout << "Returning empty!" << endl;
         return "";
     }
+
+    cout << input << endl;
 
     return input;
 }
