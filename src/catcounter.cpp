@@ -9,30 +9,6 @@ int counter(string &input);
 string getInput();
 string readFile(string fileName);
 
-int main(int argc, char *argv[])
-{
-    string in;
-    if (argc == 1)
-    {
-        cout << "> ";
-        in = getInput();
-    }
-    else if (argc == 2)
-    {
-        in = readFile(argv[1]);
-    }
-    else
-    {
-        cout << "Invalid input!" << endl;
-        return -1;
-    }
-
-    toLower(in);
-    cout << counter(in) << endl;
-
-    return 0;
-}
-
 void toLower(string &input)
 {
     transform(input.begin(), input.end(), input.begin(), ::tolower);
