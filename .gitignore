@@ -1,0 +1,5 @@
+.vscode/
+.vscode/configurationCache.log
+.vscode/targets.log
+.vscode/dryrun.log
+a.out
