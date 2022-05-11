@@ -68,10 +68,17 @@ string getInput()
 string readFile(string fileName)
 {
     ifstream input;
+    input.exceptions (ifstream::badbit);
     string fullText;
     try 
     {
         input.open(fileName);
+
+        if (input.fail())
+        {
+            cout << "Error reading file!" << endl;
+            exit(-1);
+        }
 
         if (input.is_open())
         {
@@ -83,9 +90,10 @@ string readFile(string fileName)
         }
 
     }
-    catch (const exception& e)
+    catch (const ifstream::failure& e)
     {
         cout << "Error reading file!" << endl;
+        exit(-1);
     }
 
     input.close();
