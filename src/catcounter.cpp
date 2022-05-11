@@ -4,11 +4,6 @@
 
 using namespace std;
 
-void toLower(string &input);
-int counter(string &input);
-string getInput();
-string readFile(string fileName);
-
 void toLower(string &input)
 {
     transform(input.begin(), input.end(), input.begin(), ::tolower);
